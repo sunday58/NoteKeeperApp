@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
+import com.google.android.material.snackbar.Snackbar
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -38,6 +39,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun displayNote() {
+
+        if (notePosition > DataManager.notes.lastIndex){
+            Snackbar.make(text_NoteTitle,"Note not found", Snackbar.LENGTH_SHORT).show()
+        }
         val note = DataManager.notes[notePosition]
         text_NoteTitle.setText(note.title)
         textNoteText.setText(note.text)
@@ -59,7 +64,11 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_settings -> true
             R.id.action_next -> {
-                moveNext()
+                if (notePosition < DataManager.notes.lastIndex) {
+                    moveNext()
+                }else{
+                    Snackbar.make(text_NoteTitle,"No more notes", Snackbar.LENGTH_SHORT).show()
+                }
                 true
             }
             else -> super.onOptionsItemSelected(item)
