@@ -1,5 +1,6 @@
 package com.notekeeping
 
+import android.app.Activity
 import android.os.Bundle
 import android.provider.ContactsContract
 import androidx.appcompat.app.AppCompatActivity
@@ -62,6 +63,14 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
+            R.id.action_reminder -> {
+                ReminderNotification.notify(this,"Reminder",
+                    getString(R.string.reminder_body,
+                DataManager.notes[notePosition].title),
+                notePosition
+                )
+                true
+            }
             R.id.action_settings -> true
             R.id.action_next -> {
                 if (notePosition < DataManager.notes.lastIndex) {
@@ -71,6 +80,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }

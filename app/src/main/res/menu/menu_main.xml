@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.notekeeping.MainActivity">
     <item
+        android:id="@+id/action_reminder"
+        android:orderInCategory="100"
+        android:title="Reminder"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        app:showAsAction="ifRoom|withText"/>
+    <item
         android:id="@+id/action_next"
         android:orderInCategory="100"
         android:title="@string/next"

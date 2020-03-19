@@ -17,6 +17,8 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
+    <string name="reminder_body">Review %1$s</string>
+
     <string name="menu_home">Notes</string>
     <string name="menu_gallery">Course</string>
     <string name="menu_slideshow">Share</string>
