@@ -113,6 +113,7 @@ class MainActivity : AppCompatActivity() {
         note.title = text_NoteTitle.toString()
         note.text = textNoteText.text.toString()
         note.course = spinner_Course.selectedItem as CourseInfo
+        sendRefreshBroadcast(this)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

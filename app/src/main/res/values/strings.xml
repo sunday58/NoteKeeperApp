@@ -24,4 +24,6 @@
     <string name="menu_slideshow">Share</string>
 
     <string name="home_second">Home Second</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>
